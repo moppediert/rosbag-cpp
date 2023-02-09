@@ -57,6 +57,7 @@ namespace rosbag {
 
 Bag::Bag() : encryptor_loader_("rosbag_storage", "rosbag::EncryptorBase")
 {
+    std::cout << "initing bag ..." << std::endl;
     init();
 }
 
@@ -103,6 +104,7 @@ void Bag::init() {
 }
 
 void Bag::open(string const& filename, uint32_t mode) {
+    std::cout << "opening bag ..." << std::endl;
     mode_ = (BagMode) mode;
 
     if (mode_ & bagmode::Append)

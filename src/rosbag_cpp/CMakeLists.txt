@@ -8,6 +8,8 @@ find_package(rosbag_storage REQUIRED)
 catkin_package()
 
 add_executable(rosbag_cpp src/rosbag_cpp.cpp)
-message("----------------------- ${rosbag_storage_INCLUDE_DIRS} -----------------------")
-target_link_libraries(rosbag_cpp ${rosbag_storage_LIBRARIES})
-target_include_directories(rosbag_cpp PUBLIC ${rosbag_storage_INCLUDE_DIRS})
+
+message("-----------> ${rosbag_storage_INCLUDE_DIRS}")
+
+target_link_libraries(rosbag_cpp rosbag_storage)
+target_include_directories(rosbag_cpp PUBLIC "/home/jimmy/rosbag-cpp/src/rosbag_storage/include")
